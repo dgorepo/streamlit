@@ -15,6 +15,13 @@ class Grafico:
 
 # #############################  CARREGANDO DATASETS ############################# #
 
+
+
+# --- MAPA DE BARRAGENS NO BRASIL ------------------------------------------------ #
+top10_autuacao_file = 'part-00000-08af3141-b36f-42ed-8970-012d3b2e341c-c000.csv'
+df_top10_autuacao = pd.read_csv(top10_autuacao_file)
+primeira_linha = df_top10_autuacao.columns
+
 # --- TOP 10 EMPRESAS AUTUADAS --------------------------------------------------- #
 top10_autuacao_file = 'part-00000-c8ab9c0f-2156-4d7c-b5f3-32b5b2b55f2e-c000.csv'
 df_top10_autuacao = pd.read_csv(top10_autuacao_file)
@@ -23,10 +30,6 @@ df_top10_autuacao.iloc[0, :] = primeira_linha
 df_top10_autuacao.columns = ['Empresa','Quantidade']
 df_top10_autuacao['Quantidade'] = pd.to_numeric(df_top10_autuacao['Quantidade'])
 
-# --- MAPA DE BARRAGENS NO BRASIL ------------------------------------------------ #
-top10_autuacao_file = 'part-00000-c8ab9c0f-2156-4d7c-b5f3-32b5b2b55f2e-c000.csv'
-df_top10_autuacao = pd.read_csv(top10_autuacao_file)
-primeira_linha = df_top10_autuacao.columns
 
 
 
@@ -81,9 +84,10 @@ elif(menu=='Barragens pelo Brasil'):
     st.markdown('### :earth_americas: Barragens no Brasil ')
 
     # Mapa de barragens
-    df = pd.DataFrame(
-         np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-         columns=['lat', 'lon'])
+    valores = [['20°08'51.300','-44°24'22.200']]
+    df = pd.DataFrame(valores, columns=['lat', 'lon'])
+         #np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+         #columns=['lat', 'lon'])
     st.map(df)
 
 
