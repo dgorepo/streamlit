@@ -131,10 +131,10 @@ elif(menu=='Ranking de autuação'):
 st.markdown('---')
 st.sidebar.markdown('BC8 Engenharia de Dados')
 
-st.sidebar.markdown("- [Diego](https://www.linkedin.com/in/gabriel-marcial-6ba93a1a1/)")
-st.sidebar.markdown("- [Rafael](https://www.linkedin.com/in/gabriel-marcial-6ba93a1a1/)")
-st.sidebar.markdown("- [Rayssa](https://www.linkedin.com/in/gabriel-marcial-6ba93a1a1/)")
-st.sidebar.markdown("- [Sandi](https://www.linkedin.com/in/gabriel-marcial-6ba93a1a1/)")
+st.sidebar.markdown("- [Diego](https://www.linkedin.com/in/diegomoal/)")
+st.sidebar.markdown("- [Rafael](https://www.linkedin.com/in/rafaelcicaroli/)")
+st.sidebar.markdown("- [Rayssa](https://www.linkedin.com/in/rayssawho/)")
+st.sidebar.markdown("- [Sandi](https://www.linkedin.com/in//)")
 
 
 
