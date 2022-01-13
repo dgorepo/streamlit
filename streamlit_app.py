@@ -33,8 +33,6 @@ df['lon'] = df['lon'].map(lambda x: x.lstrip('-'))
 df['lat'] = df.lat.apply(lambda x: dms2dec(x) if x.startswith("-") else dms2dec(x))
 df['lon'] = df.lon.apply(lambda x: dms2dec(x) if x.startswith("-") else dms2dec(x))
 df_barragens_brasil = df
-primeira_linha = df_barragens_brasil.columns
-df_barragens_brasil.iloc[0, :] = df_barragens_brasil
 df_barragens_brasil.columns = ['lat','lon']
 
 
