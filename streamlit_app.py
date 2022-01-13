@@ -107,18 +107,7 @@ elif(menu=='Distribuição por substancia'):
     
     
     df_serie_historica_distribuicao = df_serie_historica_distribuicao[df_serie_historica_distribuicao.uf != " "]
-    estados = df_serie_historica_distribuicao['uf'].head(23).unique()
-    meses = ['Janeiro','Feveireo','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro']
-
-             
     
-    df_serie_historica_distribuicao = df_serie_historica_distribuicao.query("uf!=XX").groupby(["",""], as_index=False)["valor"].sum()
-             
-             
-    fig = px.line(df_serie_historica_distribuicao, range_x=[1,12], x='mes', y='valor', color='marca', markers=True, labels = { "mes": "Ano 2020", "count": "Vendas", "substancia": "Ferro" }, title = 'Vendas de Ferro',)
-    fig.update_xaxes(tickangle=-45, dtick=1, visible=True, fixedrange=False)
-    fig.update_yaxes(dtick=10000, visible=True, fixedrange=False)
-    fig.update_layout(xaxis = dict(tickmode = 'array', tickvals = [1,2,3,4,5,6,7,8,9,10,11,12], ticktext = meses))
              #df_serie_historica_distribuicao
     
     
