@@ -70,7 +70,7 @@ elif(menu=='Barragens pelo Brasil'):
     # Divisor
     st.markdown('---')
     # Conhecendo o setor
-    st.markdown('### Conhecendo o setor ')
+    st.markdown('### Barragens no Brasil ')
 
     # Mapa de barragens
     df = pd.DataFrame(
