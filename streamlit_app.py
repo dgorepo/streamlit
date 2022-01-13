@@ -19,7 +19,7 @@ st.header('Bootcamp de Engenharia de Dados SoulCode')
 
 st.markdown('---')
 
-st.markdown('### Streamlit is##')
+st.markdown('### Streamlit is ')
 
 
 col1, col2, col3 = st.columns(3)
@@ -30,7 +30,7 @@ col3.metric("Humidity", "86%", "4%")
 
 st.markdown('---')
 
-st.markdown('Streamlit is **_really_ cool**.')
+st.markdown('### Streamlit is ')
 
 df = pd.DataFrame(
      np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
@@ -40,7 +40,7 @@ st.map(df)
 
 st.markdown('---')
 
-st.markdown('Streamlit is **_really_ cool**.')
+st.markdown('### Streamlit is ')
 
 chart_data = pd.DataFrame(
      np.random.randn(20, 3),
@@ -51,7 +51,7 @@ st.line_chart(chart_data)
 
 st.markdown('---')
 
-st.markdown('Streamlit is **_really_ cool**.')
+st.markdown('### Streamlit is ')
 
 df = pd.DataFrame(
     np.random.randn(50, 20),
