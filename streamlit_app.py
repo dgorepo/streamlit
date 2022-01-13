@@ -5,6 +5,14 @@ import numpy as np
 import streamlit as st
 
 
+
+add_selectbox = st.sidebar.selectbox(
+    "How would you like to be contacted?",
+    ("Email", "Home phone", "Mobile phone")
+)
+
+
+
 st.title("Mineração")
 st.header('Bootcamp de Engenharia de Dados SoulCode')
 
