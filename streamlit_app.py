@@ -54,7 +54,7 @@ df_top10_autuacao['Quantidade'] = pd.to_numeric(df_top10_autuacao['Quantidade'])
 base="dark"
 
 
-menu = st.sidebar.selectbox ('Selecione uma opção', ['Conhecendo o setor', 'Barragens pelo Brasil', 'TOP 10 em autuacao'])
+menu = st.sidebar.selectbox ('Selecione uma opção', ['Conhecendo o setor', 'Barragens pelo Brasil', 'Ranking de autuação'])
 
 
 # --- CONHECENDO O SETOR ---------------------------------------------------------- #
@@ -62,8 +62,6 @@ if menu == 'Conhecendo o setor':
 
     # Path do site
     st.write(pathlib.Path.home())
-    # Banner de topo
-    st.image("https://soulcodeacademy.org/assets/images/logo-dark.png")
     # Titulo da pagina
     st.title("Mineração")
     # Subtitulo da pagina
@@ -71,7 +69,7 @@ if menu == 'Conhecendo o setor':
     # Divisor
     st.markdown('---')
     # Nome do grafico
-    st.markdown('### :round_pushpin: Conhecendo o setor ')
+    st.markdown('### Conhecendo o setor ')
 
     # Grafico conhecendo o setor
     col1, col2, col3 = st.columns(3)
@@ -85,17 +83,14 @@ elif(menu=='Barragens pelo Brasil'):
 
     # Path do site
     st.write(pathlib.Path.home())
-    # Banner de topo
-    st.image("https://soulcodeacademy.org/assets/images/logo-dark.png")
     # Titulo da pagina
     st.title("Mineração")
     # Subtitulo da pagina
     st.header('Bootcamp de Engenharia de Dados SoulCode')
     # Divisor
     st.markdown('---')
-    # Conhecendo o setor
-    st.markdown('### Barragens no Brasil ')
-
+    # Titulo grafico
+    st.markdown('### Barragens no Brasil')
     st.markdown('Mapa interativo mostra a distribuição de barragens no Brasil')
     
     # Mapa de barragens
@@ -103,20 +98,19 @@ elif(menu=='Barragens pelo Brasil'):
 
 
 # --- TOP 10 EMPRESAS AUTUADAS --------------------------------------------------- #
-elif(menu=='TOP 10 em autuacao'):
+elif(menu=='Ranking de autuação'):
     
     # Path do site
     st.write(pathlib.Path.home())
-    # Banner de topo
-    st.image("https://soulcodeacademy.org/assets/images/logo-dark.png")
     # Titulo da pagina
     st.title("Mineração")
     # Subtitulo da pagina
     st.header('Bootcamp de Engenharia de Dados SoulCode')
     # Divisor
     st.markdown('---')
-    # Conhecendo o setor
-    st.markdown('### :dollar: Top 10 em autuacao ')
+    # Titulo grafico
+    st.markdown('### Empresas mais autuação no Brasil')
+    st.markdown('Lista das empresas mais autuadas no Brasil')
 
     # Tabela com as top 10 empresas em autuacao
     st.dataframe(df_top10_autuacao)  # Same as st.write(df)
