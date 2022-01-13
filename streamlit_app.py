@@ -11,14 +11,10 @@ add_selectbox = st.sidebar.selectbox(
     ("Email", "Home phone", "Mobile phone")
 )
 
-
+st.write(pathlib.Path.home())
 
 st.title("Mineração")
 st.header('Bootcamp de Engenharia de Dados SoulCode')
-
-
-st.write(pathlib.Path.home())
-
 
 df = pd.DataFrame(
      np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
