@@ -3,7 +3,8 @@ import pathlib
 import pandas as pd
 import numpy as np
 import streamlit as st
-
+#!pip install dms2dec
+from dms2dec.dms_convert import dms2dec
 
 
 # #############################  CLASSE PARA GRAFICOS ########################### #
@@ -18,9 +19,23 @@ class Grafico:
 
 
 # --- MAPA DE BARRAGENS NO BRASIL ------------------------------------------------ #
-top10_autuacao_file = 'part-00000-08af3141-b36f-42ed-8970-012d3b2e341c-c000.csv'
-df_top10_autuacao = pd.read_csv(top10_autuacao_file)
-primeira_linha = df_top10_autuacao.columns
+
+df = pd.read_csv('part-00000-08af3141-b36f-42ed-8970-012d3b2e341c-c000.csv',delimiter=',')
+df.columns = ['localizacao']
+df[['lat','lon']] = df.localizacao.str.split(",",expand=True)
+df.drop('localizacao', axis=1, inplace=True)
+df['lat'] = df['lat'].map(lambda x: x.rstrip('\\"'))
+df['lon'] = df['lon'].map(lambda x: x.rstrip('\\"'))
+df['lat'] = df.lat.apply(lambda x: x+"S" if x.startswith("-") else x+"N")
+df['lon'] = df.lon.apply(lambda x: x+"W" if x.startswith("-") else x+"E")
+df['lat'] = df['lat'].map(lambda x: x.lstrip('-'))
+df['lon'] = df['lon'].map(lambda x: x.lstrip('-'))
+df['lat'] = df.lat.apply(lambda x: dms2dec(x) if x.startswith("-") else dms2dec(x))
+df['lon'] = df.lon.apply(lambda x: dms2dec(x) if x.startswith("-") else dms2dec(x))
+df_top10_autuacao = df
+
+
+
 
 # --- TOP 10 EMPRESAS AUTUADAS --------------------------------------------------- #
 top10_autuacao_file = 'part-00000-c8ab9c0f-2156-4d7c-b5f3-32b5b2b55f2e-c000.csv'
@@ -84,11 +99,11 @@ elif(menu=='Barragens pelo Brasil'):
     st.markdown('### :earth_americas: Barragens no Brasil ')
 
     # Mapa de barragens
-    valores = [[-9.879488333333335,-39.86517]]
-    df = pd.DataFrame(valores, columns=['lat', 'lon'])
+    #valores = [[-9.879488333333335,-39.86517]]
+    #df = pd.DataFrame(valores, columns=['lat', 'lon'])
          #np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
          #columns=['lat', 'lon'])
-    st.map(df)
+    st.map(df_top10_autuacao)
 
 
 # --- TOP 10 EMPRESAS AUTUADAS --------------------------------------------------- #
