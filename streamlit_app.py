@@ -96,7 +96,7 @@ elif(menu=='Barragens pelo Brasil'):
     # Conhecendo o setor
     st.markdown('### :earth_americas: Barragens no Brasil ')
 
-    st.info('Distribuicao da barragens ao longo do territorio brasileiro')
+    st.info('Mapa interativo mostra a distribuição de barragens no Brasil')
     
     # Mapa de barragens
     st.map(df_barragens_brasil)
