@@ -125,7 +125,7 @@ elif(menu=='Ranking de autuação'):
     
 
 st.markdown('---')
-st.sidebar.markdown("<br><br><br>")
+st.sidebar.write("<br><br><br>")
 st.sidebar.markdown('BC8 Engenharia de Dados')
 
 st.sidebar.markdown("- [Diego](https://www.linkedin.com/in/gabriel-marcial-6ba93a1a1/)")
