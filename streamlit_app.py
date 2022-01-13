@@ -107,7 +107,7 @@ elif(menu=='Distribuição por substancia'):
     
     df_serie_historica_distribuicao = df_serie_historica_distribuicao[df_serie_historica_distribuicao.uf != " "]
     estados = df_serie_historica_distribuicao['uf'].head(23).unique()
-    meses = ['Janeiro','Feveireo','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'
+    meses = ['Janeiro','Feveireo','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro']
 
              
     
