@@ -5,10 +5,15 @@ import numpy as np
 import streamlit as st
 
 
+# menu
+menu = st.sidebar.selectbox ('Selecione uma opção', ['menu 1', 'Análise e visualização de dados'])
+if menu == 'menu 1':
 
-analysis = st.sidebar.selectbox ('Selecione uma opção', ['Classificação da imagem', 'Análise e visualização de dados'])
-if analysis == 'Análise e visualização de dados':
+    st.write(pathlib.Path.home())
 
+    st.title("Mineração")
+    st.header('Bootcamp de Engenharia de Dados SoulCode')
+    
     st.markdown('---')
 
     st.markdown('### Streamlit is ')
@@ -20,6 +25,13 @@ if analysis == 'Análise e visualização de dados':
     st.map(df)
 else:
 
+    
+    st.write(pathlib.Path.home())
+
+    st.title("Mineração")
+    st.header('Bootcamp de Engenharia de Dados SoulCode')
+    
+    
     st.markdown('### Streamlit is ')
 
     df = pd.DataFrame(
@@ -33,10 +45,7 @@ else:
 
 
 
-st.write(pathlib.Path.home())
 
-st.title("Mineração")
-st.header('Bootcamp de Engenharia de Dados SoulCode')
 
 
 st.markdown('---')
