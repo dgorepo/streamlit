@@ -3,6 +3,18 @@ import pathlib
 import pandas as pd
 import numpy as np
 import streamlit as st
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
+
+top10_autuacao_file = 'part-00000-c8ab9c0f-2156-4d7c-b5f3-32b5b2b55f2e-c000.csv'
+df_top10_autuacao = pd.read_csv(top10_autuacao_file)
+new_line = df_top10_autuacao.columns
+df_top10_autuacao.iloc[0, :] = new_line
+df_top10_autuacao.columns = ['Empresa','Quantidade']
+df_top10_autuacao['Quantidade'] = pd.to_numeric(df_top10_autuacao['Quantidade'])
+
 
 
 # menu
@@ -42,9 +54,15 @@ else:
     st.markdown('---')
 
 
+    
+    
+    
+st.markdown('---')
 
+st.markdown('### Top 10 empresas em autuacao ')
 
-
+st.bar_chart(df_top10_autuacao)
+    
 
 
 
