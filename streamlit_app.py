@@ -106,6 +106,18 @@ elif(menu=='Barragens pelo Brasil'):
 elif(menu=='Distribuição por substancia'):
     
     
+    # Path do site
+    st.write(pathlib.Path.home())
+    # Titulo da pagina
+    st.title("Mineração")
+    # Subtitulo da pagina
+    st.header('Bootcamp de Engenharia de Dados SoulCode')
+    # Divisor
+    st.markdown('---')
+    # Nome do grafico
+    st.markdown('### Distribuição por substancia ')
+    st.markdown('Serie historica de 2020 de producao de Ferro no Brasil (em toneladas)')
+    
     df_serie_historica_distribuicao = df_serie_historica_distribuicao[df_serie_historica_distribuicao.uf != " "]
     estados = df_serie_historica_distribuicao['uf'].head(23).unique()
     meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
