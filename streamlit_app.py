@@ -21,9 +21,8 @@ class Grafico:
 # --- MAPA DE BARRAGENS NO BRASIL ------------------------------------------------ #
 
 df = pd.read_csv('diego_autuacao_analise_2.csv',delimiter=',')
-df.columns = ['localizacao']
-df[['lat','lon']] = df.localizacao.str.split(",",expand=True)
-df.drop('localizacao', axis=1, inplace=True)
+df.columns = ['id','lat','lon']
+df.drop('id', axis=1, inplace=True)
 df['lat'] = df['lat'].map(lambda x: x.rstrip('\\"'))
 df['lon'] = df['lon'].map(lambda x: x.rstrip('\\"'))
 df['lat'] = df.lat.apply(lambda x: x+"S" if x.startswith("-") else x+"N")
@@ -33,7 +32,6 @@ df['lon'] = df['lon'].map(lambda x: x.lstrip('-'))
 df['lat'] = df.lat.apply(lambda x: dms2dec(x) if x.startswith("-") else dms2dec(x))
 df['lon'] = df.lon.apply(lambda x: dms2dec(x) if x.startswith("-") else dms2dec(x))
 df_barragens_brasil = df
-df_barragens_brasil.columns = ['lat','lon']
 
 
 
