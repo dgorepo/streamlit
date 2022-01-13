@@ -123,13 +123,15 @@ elif(menu=='Ranking de autuação'):
     # Tabela com as top 10 empresas em autuacao
     #st.dataframe(df_top10_autuacao)  # Same as st.write(df)
     
-    
-st.sidebar.markdown('Feito por : Gabriel Marcial')
 
-st.sidebar.markdown("Redes Sociais :")
-st.sidebar.markdown("- [Linkedin](https://www.linkedin.com/in/gabriel-marcial-6ba93a1a1/)")
-st.sidebar.markdown("- [Blog: Data Marte](https://datamarte.com/)")
-st.sidebar.markdown("- [Github](https://github.com/Gabrielmarcial)")
+st.markdown('---')
+st.sidebar.markdown("<br><br><br>")
+st.sidebar.markdown('BC8 Engenharia de Dados')
+
+st.sidebar.markdown("- [Diego](https://www.linkedin.com/in/gabriel-marcial-6ba93a1a1/)")
+st.sidebar.markdown("- [Rafael](https://www.linkedin.com/in/gabriel-marcial-6ba93a1a1/)")
+st.sidebar.markdown("- [Rayssa](https://www.linkedin.com/in/gabriel-marcial-6ba93a1a1/)")
+st.sidebar.markdown("- [Sandi](https://www.linkedin.com/in/gabriel-marcial-6ba93a1a1/)")
 
 
 
