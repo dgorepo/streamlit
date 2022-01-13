@@ -59,6 +59,7 @@ else:
 st.markdown('---')
 
 st.markdown('### Top 10 empresas em autuacao ')
+ax = df_top10_autuacao.plot.bar(x='Empresa',y='Quantidade', rot=0)
 
 #st.bar_chart(df_top10_autuacao)
     
