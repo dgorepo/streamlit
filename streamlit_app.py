@@ -116,12 +116,12 @@ elif(menu=='Ranking de autuação'):
     colunas = df_top10_autuacao.columns.tolist()
     
     #chart_data = pd.DataFrame(np.random.randn(50, 3),columns=colunas)
-
-    st.bar_chart(df_top10_autuacao)
+    st.bar_chart(df_top10_autuacao['Valores'])
+    #st.bar_chart(df_top10_autuacao)
     
     
     # Tabela com as top 10 empresas em autuacao
-    st.dataframe(df_top10_autuacao)  # Same as st.write(df)
+    #st.dataframe(df_top10_autuacao)  # Same as st.write(df)
     
     
     
