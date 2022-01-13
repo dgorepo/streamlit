@@ -51,7 +51,7 @@ df_top10_autuacao['Quantidade'] = pd.to_numeric(df_top10_autuacao['Quantidade'])
 # #############################  CORPO DA PAGINA ############################# #
 
 
-base="dark"
+base = "dark"
 
 
 menu = st.sidebar.selectbox ('Selecione uma opção', ['Conhecendo o setor', 'Barragens pelo Brasil', 'Ranking de autuação'])
@@ -112,8 +112,18 @@ elif(menu=='Ranking de autuação'):
     st.markdown('### Empresas mais autuadas')
     st.markdown('Lista das empresas mais autuadas no Brasil')
 
+    
+    colunas = df_top10_autuacao.columns.tolist()
+    
+    #chart_data = pd.DataFrame(np.random.randn(50, 3),columns=colunas)
+
+    st.bar_chart(df_top10_autuacao)
+    
+    
     # Tabela com as top 10 empresas em autuacao
     st.dataframe(df_top10_autuacao)  # Same as st.write(df)
+    
+    
     
 
 
