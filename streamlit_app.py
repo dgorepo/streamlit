@@ -84,7 +84,7 @@ elif(menu=='Barragens pelo Brasil'):
     st.markdown('### :earth_americas: Barragens no Brasil ')
 
     # Mapa de barragens
-    valores = [['20°08'51.300','-44°24'22.200']]
+    valores = [[51.300,22.200]]
     df = pd.DataFrame(valores, columns=['lat', 'lon'])
          #np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
          #columns=['lat', 'lon'])
