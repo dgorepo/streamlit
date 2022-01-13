@@ -119,7 +119,7 @@ elif(menu=='Distribuição por substancia'):
     st.markdown('### Distribuição por substancia ')
     st.markdown('Serie historica de 2020 de producao de Ferro no Brasil (em toneladas)')
     
-    df_serie_historica_distribuicao = df_serie_historica_distribuicao[df_serie_historica_distribuicao.uf != " "]
+   
     estados = df_serie_historica_distribuicao['uf'].head(23).unique()
     
     fig = px.line(df, range_x=[1,12], x='mes', y='valor', color='substancia', labels = { "mes": "Ano 2020", "count": "Vendas", "substancia": "Ferro" }, title = 'Vendas de Ferro em 2020',)
