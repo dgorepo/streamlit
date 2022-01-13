@@ -124,7 +124,12 @@ elif(menu=='Ranking de autuação'):
     #st.dataframe(df_top10_autuacao)  # Same as st.write(df)
     
     
-    
+st.sidebar.markdown('Feito por : Gabriel Marcial')
+
+st.sidebar.markdown("Redes Sociais :")
+st.sidebar.markdown("- [Linkedin](https://www.linkedin.com/in/gabriel-marcial-6ba93a1a1/)")
+st.sidebar.markdown("- [Blog: Data Marte](https://datamarte.com/)")
+st.sidebar.markdown("- [Github](https://github.com/Gabrielmarcial)")
 
 
 
