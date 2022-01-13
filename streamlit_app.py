@@ -94,7 +94,7 @@ elif(menu=='Barragens pelo Brasil'):
     # Divisor
     st.markdown('---')
     # Conhecendo o setor
-    st.markdown('### :earth_americas: Barragens no Brasil ')
+    st.markdown('### Barragens no Brasil ')
 
     st.markdown('Mapa interativo mostra a distribuição de barragens no Brasil')
     
