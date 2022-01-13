@@ -111,8 +111,7 @@ elif(menu=='Distribuição por substancia'):
     meses = ['Janeiro','Feveireo','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro']
 
              
-    
-    df_serie_historica_distribuicao = df_serie_historica_distribuicao.query("uf!=XX").groupby(["",""], as_index=False)["valor"].sum()
+    df_serie_historica_distribuicao = df_serie_historica_distribuicao.groupby(["substancia","mes"], as_index=False)["valor"].sum()
              
              
     fig = px.line(df_serie_historica_distribuicao, range_x=[1,12], x='mes', y='valor', color='marca', markers=True, labels = { "mes": "Ano 2020", "count": "Vendas", "substancia": "Ferro" }, title = 'Vendas de Ferro',)
