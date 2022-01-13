@@ -3,7 +3,7 @@ import pathlib
 import pandas as pd
 import numpy as np
 import streamlit as st
-#!pip install dms2dec
+import plotly.express as px
 from dms2dec.dms_convert import dms2dec
 
 
@@ -113,10 +113,14 @@ elif(menu=='Ranking de autuação'):
     st.markdown('Lista das empresas mais autuadas no Brasil')
 
     
-    colunas = df_top10_autuacao.columns.tolist()
+    fig = px.bar(df_top10_autuacao, x='Empresa', y='Quantidade')
+    st.plotly_chart(fig)
+    
+    
+    #colunas = df_top10_autuacao.columns.tolist()
     
     #chart_data = pd.DataFrame(np.random.randn(50, 3),columns=colunas)
-    st.bar_chart(df_top10_autuacao['Valores'])
+    #st.bar_chart(df_top10_autuacao['Valores'])
     #st.bar_chart(df_top10_autuacao)
     
     
@@ -125,7 +129,6 @@ elif(menu=='Ranking de autuação'):
     
 
 st.markdown('---')
-st.sidebar.write("<br><br><br>")
 st.sidebar.markdown('BC8 Engenharia de Dados')
 
 st.sidebar.markdown("- [Diego](https://www.linkedin.com/in/gabriel-marcial-6ba93a1a1/)")
