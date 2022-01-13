@@ -42,11 +42,11 @@ st.markdown('---')
 
 st.markdown('### Streamlit is ')
 
-chart_data = pd.DataFrame(
+Email = pd.DataFrame(
      np.random.randn(20, 3),
      columns=['a', 'b', 'c'])
 
-st.line_chart(chart_data)
+st.line_chart(Email)
 
 
 st.markdown('---')
