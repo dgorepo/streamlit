@@ -20,7 +20,7 @@ class Grafico:
 
 # --- MAPA DE BARRAGENS NO BRASIL ------------------------------------------------ #
 
-df = pd.read_csv('part-00000-08af3141-b36f-42ed-8970-012d3b2e341c-c000.csv',delimiter=',')
+df = pd.read_csv('diego_autuacao_analise_2.csv',delimiter=',')
 df.columns = ['localizacao']
 df[['lat','lon']] = df.localizacao.str.split(",",expand=True)
 df.drop('localizacao', axis=1, inplace=True)
