@@ -3,6 +3,8 @@ import pathlib
 import pandas as pd
 import numpy as np
 import streamlit as st
+import matplotlib.pyplot as plt
+import plotly.express as px
 
 
 
@@ -33,6 +35,11 @@ primeira_linha = df_top10_autuacao.columns
 
 
 # #############################  CORPO DA PAGINA ############################# #
+
+
+st.set_page_config(page_title='BC8 - Mineração',page_icon=':bar_chart:',layout='wide')
+
+
 
 menu = st.sidebar.selectbox ('Selecione uma opção', ['Conhecendo o setor', 'Barragens pelo Brasil', 'TOP 10 em autuacao'])
 
