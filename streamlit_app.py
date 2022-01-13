@@ -34,7 +34,6 @@ df['lon'] = df.lon.apply(lambda x: dms2dec(x) if x.startswith("-") else dms2dec(
 df_barragens_brasil = df
 
 
-
 # --- TOP 10 EMPRESAS AUTUADAS --------------------------------------------------- #
 top10_autuacao_file = 'part-00000-c8ab9c0f-2156-4d7c-b5f3-32b5b2b55f2e-c000.csv'
 df_top10_autuacao = pd.read_csv(top10_autuacao_file)
@@ -44,6 +43,11 @@ df_top10_autuacao.columns = ['Empresa','Quantidade']
 df_top10_autuacao['Quantidade'] = pd.to_numeric(df_top10_autuacao['Quantidade'])
 
 
+# --- SERIE HISTORICA DISTRIBUICAO ----------------------------------------------- #
+df = pd.read_csv('diego_distribuicao_analise_3.csv',delimiter=',')
+df.drop(df.columns[0], axis=1, inplace=True)
+df.drop('ano', axis=1, inplace=True)
+df_serie_historica_distribuicao = df
 
 
 
@@ -54,7 +58,7 @@ df_top10_autuacao['Quantidade'] = pd.to_numeric(df_top10_autuacao['Quantidade'])
 base = "dark"
 
 
-menu = st.sidebar.selectbox ('Selecione uma opção', ['Conhecendo o setor', 'Barragens pelo Brasil', 'Ranking de autuação'])
+menu = st.sidebar.selectbox ('Selecione uma opção', ['Conhecendo o setor', 'Barragens pelo Brasil', 'Distribuição por substancia', 'Ranking de autuação'])
 
 
 # --- CONHECENDO O SETOR ---------------------------------------------------------- #
@@ -96,7 +100,17 @@ elif(menu=='Barragens pelo Brasil'):
     # Mapa de barragens
     st.map(df_barragens_brasil)
 
-
+    
+# --- SERIE HISTORICA DISTRIBUICAO ----------------------------------------------- #
+elif(menu=='Distribuição por substancia'):
+    
+    
+    df_serie_historica_distribuicao = df_serie_historica_distribuicao.query("
+    meses = ['Janeiro','Feveireo','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'
+    #df_serie_historica_distribuicao
+    
+    
+    
 # --- TOP 10 EMPRESAS AUTUADAS --------------------------------------------------- #
 elif(menu=='Ranking de autuação'):
     
