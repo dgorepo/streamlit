@@ -60,7 +60,7 @@ st.markdown('---')
 
 st.markdown('### Top 10 empresas em autuacao ')
 
-st.bar_chart(df_top10_autuacao)
+#st.bar_chart(df_top10_autuacao)
     
 
 
