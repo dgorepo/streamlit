@@ -109,7 +109,7 @@ elif(menu=='Distribuição por substancia'):
     estados = df_serie_historica_distribuicao['uf'].head(23).unique()
     meses = ['Janeiro','Feveireo','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'
     
-    uf = st.sidebar.multiselect("Selecione uma estado",options=df_serie_historica_distribuicao['uf'].sort_values().unique(),default=estados)
+    uf = 'MG'
              
     
     df_serie_historica_distribuicao = df_serie_historica_distribuicao.query("uf==@uf").groupby(["",""], as_index=False)["valor"].sum()
