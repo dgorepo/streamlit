@@ -35,7 +35,7 @@ primeira_linha = df_top10_autuacao.columns
 # #############################  CORPO DA PAGINA ############################# #
 
 
-
+base="dark"
 
 
 menu = st.sidebar.selectbox ('Selecione uma opção', ['Conhecendo o setor', 'Barragens pelo Brasil', 'TOP 10 em autuacao'])
