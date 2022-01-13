@@ -44,7 +44,8 @@ df_top10_autuacao['Quantidade'] = pd.to_numeric(df_top10_autuacao['Quantidade'])
 
 
 # --- SERIE HISTORICA DISTRIBUICAO ----------------------------------------------- #
-df = pd.read_csv('diego_distribuicao_analise_3.csv',delimiter=',')
+filename = 'diego_distribuicao_analise_3.csv'
+df = pd.read_csv(filename)
 df.drop(df.columns[0], axis=1, inplace=True)
 df.drop('ano', axis=1, inplace=True)
 df_serie_historica_distribuicao = df
