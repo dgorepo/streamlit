@@ -53,7 +53,7 @@ if menu == 'Conhecendo o setor':
     # Divisor
     st.markdown('---')
     # Nome do grafico
-    st.markdown('### :dashboard: Conhecendo o setor ')
+    st.markdown('### :round_pushpin: Conhecendo o setor ')
 
     # Grafico conhecendo o setor
     col1, col2, col3 = st.columns(3)
@@ -74,7 +74,7 @@ elif(menu=='Barragens pelo Brasil'):
     # Divisor
     st.markdown('---')
     # Conhecendo o setor
-    st.markdown('### :map_chart: Barragens no Brasil ')
+    st.markdown('### :earth_americas: Barragens no Brasil ')
 
     # Mapa de barragens
     df = pd.DataFrame(
@@ -95,7 +95,7 @@ elif(menu=='TOP 10 em autuacao'):
     # Divisor
     st.markdown('---')
     # Conhecendo o setor
-    st.markdown('### :file_alt: Top 10 em autuacao ')
+    st.markdown('### :dollar: Top 10 em autuacao ')
 
     # Tabela com as top 10 empresas em autuacao
     st.dataframe(df_top10_autuacao)  # Same as st.write(df)
