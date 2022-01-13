@@ -46,6 +46,8 @@ if menu == 'Conhecendo o setor':
 
     # Path do site
     st.write(pathlib.Path.home())
+    # Banner de topo
+    st.image("https://soulcodeacademy.org/assets/images/logo-dark.png")
     # Titulo da pagina
     st.title("Mineração")
     # Subtitulo da pagina
@@ -67,6 +69,8 @@ elif(menu=='Barragens pelo Brasil'):
 
     # Path do site
     st.write(pathlib.Path.home())
+    # Banner de topo
+    st.image("https://soulcodeacademy.org/assets/images/logo-dark.png")
     # Titulo da pagina
     st.title("Mineração")
     # Subtitulo da pagina
@@ -85,9 +89,11 @@ elif(menu=='Barragens pelo Brasil'):
 
 # --- TOP 10 EMPRESAS AUTUADAS --------------------------------------------------- #
 elif(menu=='TOP 10 em autuacao'):
-
+    
     # Path do site
     st.write(pathlib.Path.home())
+    # Banner de topo
+    st.image("https://soulcodeacademy.org/assets/images/logo-dark.png")
     # Titulo da pagina
     st.title("Mineração")
     # Subtitulo da pagina
