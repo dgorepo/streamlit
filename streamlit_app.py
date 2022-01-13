@@ -32,8 +32,10 @@ df['lat'] = df['lat'].map(lambda x: x.lstrip('-'))
 df['lon'] = df['lon'].map(lambda x: x.lstrip('-'))
 df['lat'] = df.lat.apply(lambda x: dms2dec(x) if x.startswith("-") else dms2dec(x))
 df['lon'] = df.lon.apply(lambda x: dms2dec(x) if x.startswith("-") else dms2dec(x))
-df_top10_autuacao = df
-
+df_barragens_brasil = df
+primeira_linha = df_barragens_brasil.columns
+df_barragens_brasil.iloc[0, :] = df_barragens_brasil
+df_barragens_brasil.columns = ['lat','lon']
 
 
 
@@ -103,7 +105,7 @@ elif(menu=='Barragens pelo Brasil'):
     #df = pd.DataFrame(valores, columns=['lat', 'lon'])
          #np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
          #columns=['lat', 'lon'])
-    st.map(df_top10_autuacao)
+    st.map(df_barragens_brasil)
 
 
 # --- TOP 10 EMPRESAS AUTUADAS --------------------------------------------------- #
