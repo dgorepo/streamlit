@@ -109,7 +109,7 @@ elif(menu=='Ranking de autuação'):
     # Divisor
     st.markdown('---')
     # Titulo grafico
-    st.markdown('### Empresas mais autuação no Brasil')
+    st.markdown('### Empresas mais autuadas')
     st.markdown('Lista das empresas mais autuadas no Brasil')
 
     # Tabela com as top 10 empresas em autuacao
