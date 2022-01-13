@@ -47,8 +47,9 @@ df_top10_autuacao['Quantidade'] = pd.to_numeric(df_top10_autuacao['Quantidade'])
 filename = 'diego_distribuicao_analise_3.csv'
 df = pd.read_csv(filename)
 df.drop(df.columns[0], axis=1, inplace=True)
-df.drop('ano', axis=1, inplace=True)
+df = df.sort_values('mes')
 df_serie_historica_distribuicao = df
+
 
 
 
@@ -120,15 +121,14 @@ elif(menu=='Distribuição por substancia'):
     
     df_serie_historica_distribuicao = df_serie_historica_distribuicao[df_serie_historica_distribuicao.uf != " "]
     estados = df_serie_historica_distribuicao['uf'].head(23).unique()
-    meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
     
-    
-    df = df_serie_historica_distribuicao.groupby(["substancia","mes"], as_index=False)["valor"].sum()
     fig = px.line(df, range_x=[1,12], x='mes', y='valor', color='substancia', labels = { "mes": "Ano 2020", "count": "Vendas", "substancia": "Ferro" }, title = 'Vendas de Ferro em 2020',)
-    
+    meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
     fig.update_xaxes(tickangle=-45, dtick=1, visible=True, fixedrange=False)
     fig.update_yaxes(dtick=10000, visible=True, fixedrange=False)
     fig.update_layout(xaxis = dict(tickmode = 'array', tickvals = [1,2,3,4,5,6,7,8,9,10,11,12], ticktext = meses))
+
+    
     st.plotly_chart(fig)
 
     
