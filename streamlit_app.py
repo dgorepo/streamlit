@@ -70,8 +70,6 @@ if menu == 'Conhecendo o setor':
     st.write(pathlib.Path.home())
     # Titulo da pagina
     st.title("Mineração")
-    # Subtitulo da pagina
-    st.header('Bootcamp de Engenharia de Dados SoulCode')
     # Divisor
     st.markdown('---')
     # Nome do grafico
@@ -91,8 +89,6 @@ elif(menu=='Barragens pelo Brasil'):
     st.write(pathlib.Path.home())
     # Titulo da pagina
     st.title("Mineração")
-    # Subtitulo da pagina
-    st.header('Bootcamp de Engenharia de Dados SoulCode')
     # Divisor
     st.markdown('---')
     # Titulo grafico
@@ -111,8 +107,6 @@ elif(menu=='Distribuição por substancia'):
     st.write(pathlib.Path.home())
     # Titulo da pagina
     st.title("Mineração")
-    # Subtitulo da pagina
-    st.header('Bootcamp de Engenharia de Dados SoulCode')
     # Divisor
     st.markdown('---')
     # Nome do grafico
@@ -140,8 +134,6 @@ elif(menu=='Ranking de autuação'):
     st.write(pathlib.Path.home())
     # Titulo da pagina
     st.title("Mineração")
-    # Subtitulo da pagina
-    st.header('Bootcamp de Engenharia de Dados SoulCode')
     # Divisor
     st.markdown('---')
     # Titulo grafico
@@ -166,11 +158,7 @@ elif(menu=='Ranking de autuação'):
 
 st.markdown('---')
 st.sidebar.markdown('BC8 Engenharia de Dados')
-
-st.sidebar.markdown("- [Diego](https://www.linkedin.com/in/diegomoal/)")
-st.sidebar.markdown("- [Rafael](https://www.linkedin.com/in/rafaelcicaroli/)")
-st.sidebar.markdown("- [Rayssa](https://www.linkedin.com/in/rayssawho/)")
-st.sidebar.markdown("- [Sandi](https://www.linkedin.com/in//)")
+st.sidebar.markdown('SoulCode')
 
 
 
