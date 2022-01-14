@@ -68,7 +68,7 @@ st.markdown('### Conhecendo o setor ')
 # Grafico conhecendo o setor
 col1, col2, col3 = st.columns(3)
 col1.metric("Mineradoras", "275")
-col2.metric("Barragens", "907")
+col2.metric("Barragens", "907", "643")
 col3.metric("Minérios", "255")
     
 
