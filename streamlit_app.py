@@ -57,12 +57,7 @@ df_serie_historica_distribuicao = df
 # #############################  CORPO DA PAGINA ############################# #
 
 
-base = "dark"
 
-
-
-# Path do site
-st.write(pathlib.Path.home())
 # Titulo da pagina
 st.title("Mineração")
 # Divisor
@@ -72,9 +67,9 @@ st.markdown('### Conhecendo o setor ')
 
 # Grafico conhecendo o setor
 col1, col2, col3 = st.columns(3)
-col1.metric("Temperature", "70 °F", "1.2 °F")
-col2.metric("Wind", "9 mph", "-8%")
-col3.metric("Humidity", "86%", "4%")
+col1.metric("Mineradoras", "275")
+col2.metric("Barragens", "907")
+col3.metric("Minérios", "255")
     
 
 st.markdown('---')
