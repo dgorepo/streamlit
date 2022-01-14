@@ -60,100 +60,60 @@ df_serie_historica_distribuicao = df
 base = "dark"
 
 
-menu = st.sidebar.selectbox ('Selecione uma opção', ['Conhecendo o setor', 'Barragens pelo Brasil', 'Distribuição por substancia', 'Ranking de autuação'])
 
+# Path do site
+st.write(pathlib.Path.home())
+# Titulo da pagina
+st.title("Mineração")
+# Divisor
+st.markdown('---')
+# Nome do grafico
+st.markdown('### Conhecendo o setor ')
 
-# --- CONHECENDO O SETOR ---------------------------------------------------------- #
-if menu == 'Conhecendo o setor':
-
-    # Path do site
-    st.write(pathlib.Path.home())
-    # Titulo da pagina
-    st.title("Mineração")
-    # Divisor
-    st.markdown('---')
-    # Nome do grafico
-    st.markdown('### Conhecendo o setor ')
-
-    # Grafico conhecendo o setor
-    col1, col2, col3 = st.columns(3)
-    col1.metric("Temperature", "70 °F", "1.2 °F")
-    col2.metric("Wind", "9 mph", "-8%")
-    col3.metric("Humidity", "86%", "4%")
+# Grafico conhecendo o setor
+col1, col2, col3 = st.columns(3)
+col1.metric("Temperature", "70 °F", "1.2 °F")
+col2.metric("Wind", "9 mph", "-8%")
+col3.metric("Humidity", "86%", "4%")
     
-    
-# --- MAPA DE BARRAGENS NO BRASIL ------------------------------------------------ #
-elif(menu=='Barragens pelo Brasil'):
 
-    # Path do site
-    st.write(pathlib.Path.home())
-    # Titulo da pagina
-    st.title("Mineração")
-    # Divisor
-    st.markdown('---')
-    # Titulo grafico
-    st.markdown('### Barragens no Brasil')
-    st.markdown('Mapa interativo mostra a distribuição de barragens no Brasil')
-    
-    # Mapa de barragens
-    st.map(df_barragens_brasil)
+st.markdown('---')
+# Titulo grafico
+st.markdown('### Barragens no Brasil')
+st.markdown('Mapa interativo mostra a distribuição de barragens no Brasil')
+
+# Mapa de barragens
+st.map(df_barragens_brasil)
 
     
-# --- SERIE HISTORICA DISTRIBUICAO ----------------------------------------------- #
-elif(menu=='Distribuição por substancia'):
-    
-    
-    # Path do site
-    st.write(pathlib.Path.home())
-    # Titulo da pagina
-    st.title("Mineração")
-    # Divisor
-    st.markdown('---')
-    # Nome do grafico
-    st.markdown('### Distribuição por substancia ')
-    st.markdown('Serie historica de 2020 de producao de Ferro no Brasil (em toneladas)')
-    
- 
-    
-    fig = px.line(df, range_x=[1,12], x='mes', y='valor', color='substancia', labels = { "mes": "Ano 2020", "count": "Vendas", "substancia": "Ferro" }, title = 'Vendas de Ferro em 2020',)
-    meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
-    fig.update_xaxes(tickangle=-45, dtick=1, visible=True, fixedrange=False)
-    fig.update_yaxes(dtick=10000, visible=True, fixedrange=False)
-    fig.update_layout(xaxis = dict(tickmode = 'array', tickvals = [1,2,3,4,5,6,7,8,9,10,11,12], ticktext = meses))
+st.markdown('---')
+# Nome do grafico
+st.markdown('### Produção de Ferro ')
+st.markdown('Produção de Ferro no Brasil (em toneladas)')
 
-    
-    st.plotly_chart(fig)
+
+
+fig = px.line(df, range_x=[1,12], x='mes', y='valor', color='substancia', labels = { "mes": "Ano 2020", "count": "Vendas", "substancia": "Ferro" }, title = '',)
+meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
+fig.update_xaxes(tickangle=-45, dtick=1, visible=True, fixedrange=False)
+fig.update_yaxes(dtick=10000, visible=True, fixedrange=False)
+fig.update_layout(xaxis = dict(tickmode = 'array', tickvals = [1,2,3,4,5,6,7,8,9,10,11,12], ticktext = meses))
+
+
+st.plotly_chart(fig)
 
     
     
-    
-# --- TOP 10 EMPRESAS AUTUADAS --------------------------------------------------- #
-elif(menu=='Ranking de autuação'):
-    
-    # Path do site
-    st.write(pathlib.Path.home())
-    # Titulo da pagina
-    st.title("Mineração")
-    # Divisor
-    st.markdown('---')
-    # Titulo grafico
-    st.markdown('### Ranking de autuação')
-    st.markdown('Lista das empresas mais autuadas no Brasil')
+st.markdown('---')
+# Titulo grafico
+st.markdown('### Ranking de autuação')
+st.markdown('Lista das empresas mais autuadas no Brasil')
 
+
+fig = px.bar(df_top10_autuacao, x='Empresa', y='Quantidade')
+st.plotly_chart(fig)
     
-    fig = px.bar(df_top10_autuacao, x='Empresa', y='Quantidade')
-    st.plotly_chart(fig)
-    
-    
-    #colunas = df_top10_autuacao.columns.tolist()
-    
-    #chart_data = pd.DataFrame(np.random.randn(50, 3),columns=colunas)
-    #st.bar_chart(df_top10_autuacao['Valores'])
-    #st.bar_chart(df_top10_autuacao)
-    
-    
-    # Tabela com as top 10 empresas em autuacao
-    #st.dataframe(df_top10_autuacao)  # Same as st.write(df)
+
     
 
 st.markdown('---')
