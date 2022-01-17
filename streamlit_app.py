@@ -111,7 +111,7 @@ st.plotly_chart(fig)
 
     
 
-st.markdown('---')
+st.markdown('----')
 st.sidebar.markdown('BC8 Engenharia de Dados')
 st.sidebar.markdown('SoulCode')
 
