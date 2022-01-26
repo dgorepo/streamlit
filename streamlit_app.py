@@ -44,17 +44,9 @@ df_barragens_brasil = df
 
 
 # Titulo da pagina
-st.title("Mineração")
+st.title("Mineração / BC8")
 # Divisor
 st.markdown('---')
-# Nome do grafico
-st.markdown('### Conhecendo o setor ')
-
-# Grafico conhecendo o setor
-col1, col2, col3 = st.columns(3)
-col1.metric("Mineradoras", "275")
-col2.metric("Barragens", "907", "643")
-col3.metric("Minérios", "255")
     
 
 st.markdown('---')
@@ -66,13 +58,7 @@ st.markdown('Mapa interativo mostra a distribuição de barragens no Brasil')
 st.map(df_barragens_brasil)
 
     
-    
 
-    
-
-st.markdown('----')
-st.sidebar.markdown('BC8 Engenharia de Dados')
-st.sidebar.markdown('SoulCode')
 
 
 
