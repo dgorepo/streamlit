@@ -34,21 +34,6 @@ df['lon'] = df.lon.apply(lambda x: dms2dec(x) if x.startswith("-") else dms2dec(
 df_barragens_brasil = df
 
 
-# --- TOP 10 EMPRESAS AUTUADAS --------------------------------------------------- #
-top10_autuacao_file = 'part-00000-c8ab9c0f-2156-4d7c-b5f3-32b5b2b55f2e-c000.csv'
-df_top10_autuacao = pd.read_csv(top10_autuacao_file)
-primeira_linha = df_top10_autuacao.columns
-df_top10_autuacao.iloc[0, :] = primeira_linha
-df_top10_autuacao.columns = ['Empresa','Quantidade']
-df_top10_autuacao['Quantidade'] = pd.to_numeric(df_top10_autuacao['Quantidade'])
-
-
-# --- SERIE HISTORICA DISTRIBUICAO ----------------------------------------------- #
-filename = 'diego_distribuicao_analise_4.csv'
-df = pd.read_csv(filename)
-df.drop(df.columns[0], axis=1, inplace=True)
-df = df.sort_values('mes')
-df_serie_historica_distribuicao = df
 
 
 
@@ -81,32 +66,6 @@ st.markdown('Mapa interativo mostra a distribuição de barragens no Brasil')
 st.map(df_barragens_brasil)
 
     
-st.markdown('---')
-# Nome do grafico
-st.markdown('### Produção de Ferro ')
-st.markdown('Produção de Ferro no Brasil (em toneladas)')
-
-
-
-fig = px.line(df, range_x=[1,12], x='mes', y='valor', color='substancia', labels = { "mes": "Ano 2020", "count": "Vendas", "substancia": "Ferro" }, title = '',)
-meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
-fig.update_xaxes(tickangle=-45, dtick=1, visible=True, fixedrange=False)
-fig.update_yaxes(dtick=10000, visible=True, fixedrange=False)
-fig.update_layout(xaxis = dict(tickmode = 'array', tickvals = [1,2,3,4,5,6,7,8,9,10,11,12], ticktext = meses))
-
-
-st.plotly_chart(fig)
-
-    
-    
-st.markdown('---')
-# Titulo grafico
-st.markdown('### Ranking de autuação')
-st.markdown('Lista das empresas mais autuadas no Brasil')
-
-
-fig = px.bar(df_top10_autuacao, x='Empresa', y='Quantidade')
-st.plotly_chart(fig)
     
 
     
