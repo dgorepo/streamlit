@@ -7,14 +7,6 @@ import plotly.express as px
 from dms2dec.dms_convert import dms2dec
 
 
-# #############################  CLASSE PARA GRAFICOS ########################### #
-class Grafico:
-    def gera_grafico(self):
-        pass
-
-
-
-# #############################  CARREGANDO DATASETS ############################# #
 
 
 
@@ -34,11 +26,6 @@ df['lon'] = df.lon.apply(lambda x: dms2dec(x) if x.startswith("-") else dms2dec(
 df_barragens_brasil = df
 
 
-
-
-
-
-
 # #############################  CORPO DA PAGINA ############################# #
 
 
@@ -47,11 +34,6 @@ df_barragens_brasil = df
 st.title("Mineração / BC8")
 # Divisor
 st.markdown('---')
-    
-
-st.markdown('---')
-# Titulo grafico
-st.markdown('### Barragens no Brasil')
 st.markdown('Mapa interativo mostra a distribuição de barragens no Brasil')
 
 # Mapa de barragens
